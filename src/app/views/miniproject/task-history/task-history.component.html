@@ -1,0 +1,29 @@
+<button class="m-t" (click)="nav_to()" cButton color="primary">
+    Back
+  </button>
+
+
+<div *ngIf="tableState === true" style="margin-top: 50px;" class="container dpf">
+    <table cTable>
+        <thead>
+        <tr>
+          <th scope="col">Status</th>
+          <th scope="col">Name</th>
+          <th scope="col">Descriptions</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        <tr cTableColor="success" *ngFor="let item of history_data;let i as index">
+          <th scope="row">Success</th>
+          <td>{{item.list_name}}</td>
+          <td>{{item.list_desc}}</td>
+        </tr>
+        
+      </table>
+</div>
+<div *ngIf="tableState === false" style="margin-top: 50px;" class="container dpf">
+    <div class="header">
+      <h1>No Data</h1>
+    </div>
+</div>

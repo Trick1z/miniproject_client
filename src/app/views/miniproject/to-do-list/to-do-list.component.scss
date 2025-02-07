@@ -1,0 +1,68 @@
+.forms-groups {
+  .forms {
+    display: grid;
+    
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+.m-t {
+    margin-top: 20px;
+}
+
+.m-l{
+  margin-left: 10px;
+}
+
+// .table{
+  
+//   padding: 1rem;
+//   width: 50rem;
+// }
+
+.dpf{
+  display: flex;
+  justify-content: center;
+
+}
+
+.container{
+  flex-direction: column;
+  .info-card{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    box-shadow: 7px 6px 9px 0px #5957d3;
+
+    padding: 20px;
+    width: 60rem;
+    background-color: white;
+  }
+}
+
+
+.btns{
+  color: white;
+  transition: 0.4s; 
+  
+}
+.btns:hover{
+  // background-color:#5856d6;
+  box-shadow: 5px 4px 10px #acaaaa;
+  transform: scale(1.2) ;
+
+}
+
+.callout{
+  
+  background-color: white;
+  box-shadow: 4px 5px 13px #2c2ac5;
+transition: 0.5s ease-in-out;}
+
+  // .callout:hover{
+  //   transform: scale(1.1);
+
+  // }

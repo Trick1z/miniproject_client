@@ -1,0 +1,102 @@
+<div class="forms-groups" id="editSection">
+  <form cForm class="forms">
+    <div class="xs-3">
+      <label cLabel for="exampleFormControlInput1">Name</label>
+      <input
+       
+      required
+        [(ngModel)]="formData.name"
+        [ngModelOptions]="{ standalone: true }"
+        cFormControl
+        id="exampleFormControlInput1"
+        placeholder="things to do"
+        type="text"
+      />
+    </div>
+    <div class="xs-3">
+      <label cLabel for="exampleFormControlInput2">Descriptions</label>
+      <input
+      required
+        [(ngModel)]="formData.desc"
+        [ngModelOptions]="{ standalone: true }"
+        cFormControl
+        id="exampleFormControlInput2"
+        placeholder="descriptions"
+        type="text"
+      />
+    </div>
+  </form>
+
+  <c-callout class="callout" color="primary" *ngIf="warning">
+    Name must not empty
+  </c-callout>
+
+
+
+  <div class="btn-state" *ngIf="topButtonState === true">
+    <button class="m-t" (click)="add_task_onsubmit()" cButton color="primary">
+      Add Task
+    </button>
+    <button
+      style="margin-left: 20px"
+      class="m-t"
+      (click)="nav_to('miniproject/task-history')"
+      cButton
+      color="secondary"
+    >
+      History
+    </button>
+  </div>
+  <div class="btn-state" *ngIf="topButtonState === false">
+    <button class="m-t" (click)="onEdit_save()" cButton color="primary">
+      Save
+    </button>
+    <button
+      style="margin-left: 20px"
+      class="m-t"
+      (click)="onEdit_cancle()"
+      cButton
+      color="secondary"
+    >
+      Cancle
+    </button>
+  </div>
+</div>
+
+<div class="container dpf">
+  <div *ngFor="let item of Task" class="info-card m-t">
+    <div class="info">
+      <h5>name :{{ item.list_name }}</h5>
+      <h5>desc :{{ item.list_desc }}</h5>
+    </div>
+    <div class="btn-group">
+      <button
+        style="margin-left: 5px"
+        class="btns m-l"
+        (click)="success_btn(item.list_id)"
+        cButton
+        color="info"
+      >
+        Success
+      </button>
+      <button
+        style="margin-left: 5px"
+        class="btns m-l"
+        (click)="onEdit(item)"
+        cButton
+        color="warning"
+      >
+        Edit
+      </button>
+      <button
+        style="margin-left: 5px"
+        class="btns m-l"
+        (click)="delete_btn(item.list_id)"
+        cButton
+        color="danger"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
