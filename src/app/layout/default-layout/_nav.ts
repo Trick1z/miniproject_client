@@ -20,6 +20,11 @@ export const navItems: INavData[] = [
     url: '/miniproject/to-do-list',
     iconComponent: { name: 'cil-drop' }
   },
+  {
+    name: 'Calculator',
+    url: '/miniproject/calculator',
+    iconComponent: { name: 'cil-drop' }
+  },
   // {
   //   name: 'Typography',
   //   url: '/theme/typography',

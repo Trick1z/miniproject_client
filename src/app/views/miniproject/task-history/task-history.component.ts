@@ -6,13 +6,13 @@ import { Router } from '@angular/router';
 import { ButtonDirective, TableModule } from '@coreui/angular';
 @Component({
   selector: 'app-task-history',
-  imports: [NgIf,NgFor,CommonModule,ButtonDirective, TableModule,HttpClientModule],
+  imports: [NgIf, NgFor, CommonModule, ButtonDirective, TableModule, HttpClientModule],
   templateUrl: './task-history.component.html',
   styleUrl: './task-history.component.scss',
-  standalone:true
+  standalone: true
 })
 export class TaskHistoryComponent implements OnInit {
-  history_data: any = [1,2]
+  history_data: any = []
 
 
   ngOnInit(): void {
@@ -20,32 +20,32 @@ export class TaskHistoryComponent implements OnInit {
   }
 
   constructor(
-    private http : HttpClient,
-    private nav : Router
+    private http: HttpClient,
+    private nav: Router
   ) { }
 
-  tableState:Boolean = true;
+  tableState: Boolean = true;
 
-  get_history(){
+  get_history() {
 
-    this.http.get('http://127.0.0.1:8000/get.task/success').subscribe((res:any) =>{
+    this.http.get('http://127.0.0.1:8000/get.task/success').subscribe((res: any) => {
 
       this.history_data = res.data
-console.log(res);
+      console.log(res);
 
-      if (!res ){
+      if (!res) {
         return this.tableState = false;
       }
-      else{
+      else {
         return this.tableState = true;
       }
 
-      
-      
+
+
     })
   }
 
-  nav_to(){
-this.nav.navigateByUrl('miniproject/to-do-list')
+  nav_to() {
+    this.nav.navigateByUrl('miniproject/to-do-list')
   }
 }

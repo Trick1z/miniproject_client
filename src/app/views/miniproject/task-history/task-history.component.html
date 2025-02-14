@@ -14,7 +14,7 @@
         </thead>
         <tbody>
         
-        <tr cTableColor="success" *ngFor="let item of history_data;let i as index">
+        <tr cTableColor="success" *ngFor="let item of history_data;let i = index">
           <th scope="row">Success</th>
           <td>{{item.list_name}}</td>
           <td>{{item.list_desc}}</td>

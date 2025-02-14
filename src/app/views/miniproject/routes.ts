@@ -26,6 +26,13 @@ export const routes: Routes = [
           title: 'task-history'
         }
       },
+      {
+        path: 'calculator',
+        loadComponent: () => import('./calculator/calculator.component').then(m => m.CalculatorComponent),
+        data: {
+          title: 'calculator'
+        }
+      },
       
     ]
   }

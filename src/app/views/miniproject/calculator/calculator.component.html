@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="cal-box">
+    <div class="result">
+      <h1>{{result1}}</h1>
+      <h1>{{sign}}</h1>
+      <h1 *ngIf='sign'>{{result2}}</h1>
+    </div>
+
+    <div class="sign-groups">
+      <button (click)="sign = '+'" class="sign">+</button>
+      <button (click)="sign = '-'" class="sign">-</button>
+      <button (click)="sign = '*'" class="sign">*</button>
+      <button (click)="sign = '/'" class="sign">/</button>
+    </div>
+    <div class="text-groups">
+      <div class="left">
+        <button class="sign" (click)="btn(nums)" *ngFor="let nums of numpad">{{nums}}</button>
+        <button class="sign" (click)="btn('.')">.</button>
+        <button (click)='clear()' class="sign">AC</button>
+      </div>
+      <div class="right">
+        <button class="sign" (click)="find_result()">=</button>
+
+      </div>
+    </div>
+  </div>
+</div>
