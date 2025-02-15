@@ -1,0 +1,101 @@
+.container {
+  display: flex;
+  justify-content: center;
+  .cards {
+    background: linear-gradient(148deg, #1f264c, #7f50acbf);
+    box-shadow: 6px 7px 19px 2px #443c99;
+    width: 22rem;
+    height: 50rem;
+    padding: 20px 30px;
+    border-radius: 20px;
+
+    .updates {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+
+      .btn{
+        transition: 0.2s ease-in-out;
+
+      }.btn:hover{
+        transform: scale(1.2);
+        box-shadow: 2px 2px 2px #4d4985;
+      }
+    }
+    
+    .weather {
+      background: linear-gradient(346deg, #272a4d, #a899b7bf);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 10px 7px 14px 0px #292147;
+      transition: 0.5s ease-in-out;
+    }
+    .weather:hover {
+      transform: scale(1.1);
+    }
+    .temp {
+      background: linear-gradient(131deg, #272a4d, #9384a3bf);
+      padding: 20px;
+      border-radius: 10px;
+      // box-shadow: 10px 7px 14px 0px #292147;
+      box-shadow: -10px -7px 14px 0px #292147;
+
+      transition: 0.5s ease-in-out;
+    }
+    .temp:hover {
+      transform: scale(1.1);
+    }
+    .wind {
+      background: linear-gradient(324deg, #272a4d, #9384a3bf);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 10px 7px 14px 0px #292147;
+      margin: 30px 0;
+      transition: 0.5s ease-in-out;
+    }
+    .wind:hover {
+      transform: scale(1.1);
+    }
+    .city {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+      .weather-box-left {
+        h1 {
+          font-size: 60px;
+        }
+      }
+    }
+    // .info-main{
+    //   display: flex;
+    // }
+  }
+  // .cards{
+  //     background-color: #3498db; /* Initial color */
+  //     padding: 20px;
+  //     color: white;
+  //     text-align: center;
+  //     animation: fadeColor 3s infinite alternate; /* Animation for color fading */
+  //   }
+}
+
+.w {
+  color: white;
+}
+
+.p-t {
+  padding-top: 50px;
+}
+
+.dpf-r {
+  display: flex;
+  flex-direction: row;
+}
+
+.j-between {
+  justify-content: space-between;
+}
+
+.fg {
+  text-shadow: white;
+}

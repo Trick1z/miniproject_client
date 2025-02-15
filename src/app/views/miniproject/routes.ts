@@ -33,6 +33,13 @@ export const routes: Routes = [
           title: 'calculator'
         }
       },
+      {
+        path: 'weather',
+        loadComponent: () => import('./weather/weather.component').then(m => m.WeatherComponent),
+        data: {
+          title: 'weather'
+        }
+      },
       
     ]
   }

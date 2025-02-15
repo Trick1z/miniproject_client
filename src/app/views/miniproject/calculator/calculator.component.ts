@@ -9,8 +9,10 @@ import { BrowserModule } from '@angular/platform-browser';
   styleUrl: './calculator.component.scss'
 })
 export class CalculatorComponent {
-  result1: number = 0
-  result2: number = 0
+  // result1: number = 0
+  // result2: number = 0
+  result1: string = ''
+  result2: string = ''
   numpad: Array<string> = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
   str: string = ''
   str2: string = ''
@@ -20,10 +22,12 @@ export class CalculatorComponent {
 
     if (this.sign) {
       this.str2 += nums
-      this.result2 = parseFloat(this.str2)
+      this.result2 = this.str2
+      this.result2 = this.result2.toLocaleString()
     } else {
       this.str += nums
-      this.result1 = parseFloat(this.str)
+      this.result1 = this.str
+      this.result1 = this.result1.toLocaleString()
     }
 
   }
@@ -32,27 +36,26 @@ export class CalculatorComponent {
     var res = 0
     switch (this.sign) {
       case '+':
-        res = this.result1 + this.result2
-        this.result1 = res
+        res = parseFloat(this.result1) + parseFloat(this.result2)
+        this.result1 = res.toLocaleString()
         this.clear2()
         break
       case '-':
-        res = this.result1 - this.result2
-        this.result1 = res
+        res = parseFloat(this.result1) - parseFloat(this.result2)
+        this.result1 = res.toLocaleString()
         this.clear2()
 
         break
       case '*':
-        res = this.result1 * this.result2
-        this.result1 = res
+        res = parseFloat(this.result1) * parseFloat(this.result2)
+        this.result1 = res.toLocaleString()
         this.clear2()
 
         break
       case '/':
-        res = this.result1 / this.result2
-        this.result1 = res
+        res = parseFloat(this.result1) / parseFloat(this.result2)
+        this.result1 = res.toLocaleString()
         this.clear2()
-
         break
     }
 
@@ -64,13 +67,13 @@ export class CalculatorComponent {
     this.str = ''
     this.str2 = ''
     this.sign = ''
-    this.result1 = 0
-    this.result2 = 0
+    this.result1 = ''
+    this.result2 = ''
   }
   clear2() {
     this.str = ''
     this.str2 = ''
     this.sign = ''
-    this.result2 = 0
+    this.result2 = ''
   }
 }

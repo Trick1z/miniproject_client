@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="cards">
+    <div class="city">
+      <div class="weather-box-left w dpf-r j-between">
+        <h1>{{ weather_data.name }}</h1>
+      </div>
+    </div>
+
+    <div class="updates">
+      <button (click)="update()" class="btn" cButton color="dark">
+        <c-spinner size="sm" variant="grow" />
+      </button>
+    </div>
+
+    <!-- weather -->
+    <div class="weather w p-t">
+      <div class="head w">
+        <h2>Weathers</h2>
+      </div>
+      <div class="weather-box-left dpf-r j-between">
+        <div class="weather-box">
+          <!-- <h6>Main : {{ weather_info?.main }}</h6>
+          <h6>desc : {{ weather_info?.description }}</h6> -->
+          <h6>Main : {{ weather_info?.main || "Data not available" }}</h6>
+          <h6>
+            Desc :
+            {{ weather_info?.description || "Data  not available" }}
+          </h6>
+        </div>
+
+        <div class="icon-box">
+          <img
+            src="https://openweathermap.org/img/wn/02n.png"
+            alt="Partly Cloudy Night"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- temp -->
+    <div style="margin: 30px 0" class="temp">
+      <div class="head w">
+        <h2>Temperature</h2>
+      </div>
+      <div class="weather-box-left dpf-r j-between">
+        <div class="weather-box-left w">
+          <h6>
+            Feel :
+            {{ k_to_c(weather_data?.main?.feels_like) || "Data not available" }}
+            °
+          </h6>
+          <h6>
+            Max :
+            {{ k_to_c(weather_data?.main?.temp_max) || "Data not available" }} °
+          </h6>
+          <h6>
+            Min :
+            {{ k_to_c(weather_data?.main?.temp_min) || "Data not available" }} °
+          </h6>
+        </div>
+        <div class="weather-box-right w">
+          <h1>{{ k_to_c(weather_data?.main?.temp) }} °</h1>
+        </div>
+      </div>
+
+      <div class="ph dpf-r w j-between">
+        <div class="pressure">
+          <h3>Pressure</h3>
+          <h3>{{ weather_data?.main?.pressure }} hPa</h3>
+        </div>
+
+        <div class="humidity">
+          <h3>Humidity</h3>
+          <h3>{{ weather_data?.main?.humidity }} %</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- wind -->
+    <div style="margin: 30px 0" class="wind">
+      <div class="head w">
+        <h2>Wind</h2>
+      </div>
+      <div class="weather-box-left dpf-r j-between">
+        <div class="weather-box-left w">
+          <h6>
+            Clouds : {{ weather_data?.clouds?.all || "Data  not available" }} %
+          </h6>
+          <h6>
+            Speed : {{ weather_data?.wind?.speed || "Data  not available" }} m/s
+          </h6>
+        </div>
+        <div class="weather-box-right w">
+          <h6>
+            Direction {{ weather_data?.wind?.deg || "Data  not available" }}°
+          </h6>
+          <h6>
+            Gust {{ weather_data?.wind?.gust || "Data  not available" }} m/s
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
