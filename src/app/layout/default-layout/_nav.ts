@@ -30,6 +30,12 @@ export const navItems: INavData[] = [
     url: '/miniproject/weather',
     iconComponent: { name: 'cil-drop' }
   },
+  
+  {
+    name: 'exchange',
+    url: '/miniproject/exchange',
+    iconComponent: { name: 'cil-drop' }
+  },
   // {
   //   name: 'Typography',
   //   url: '/theme/typography',

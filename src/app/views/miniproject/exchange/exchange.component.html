@@ -1,0 +1,37 @@
+<div class="form">
+  <form cForm>
+    <div class="mb-3">
+      <label cLabel for="exampleFormControlInput1">Values</label>
+      <input
+        [(ngModel)]="inp"
+        [ngModelOptions]="{ standalone: true }"
+        cFormControl
+        id="exampleFormControlInput1"
+        placeholder="123"
+        type="number"
+      />
+    </div>
+  </form>
+</div>
+<button (click)="submit()" cButton color="primary">Submit</button>
+
+<div class="container" *ngIf="showrate">
+  <div class="cards">
+    <table cTable>
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Rate</th>
+          <th scope="col">result</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr [cTableColor]="color" *ngFor="let color of colors;let i = index">
+          <th scope="row">{{rate[i].main}}</th>
+          <td>{{rate[i].value}} {{rate[i].name}}</td>
+          <td>{{calculate(rate[i].value)}} THB.</td>
+        </tr>
+        </tbody>
+      </table>
+  </div>
+</div>

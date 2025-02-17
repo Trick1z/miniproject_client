@@ -40,6 +40,13 @@ export const routes: Routes = [
           title: 'weather'
         }
       },
+      {
+        path: 'exchange',
+        loadComponent: () => import('./exchange/exchange.component').then(m => m.ExchangeComponent),
+        data: {
+          title: 'exchange'
+        }
+      },
       
     ]
   }
