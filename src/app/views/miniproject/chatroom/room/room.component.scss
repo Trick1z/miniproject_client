@@ -1,0 +1,39 @@
+.container{
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    border: 2px solid black;
+    box-shadow: 6px 7px 12px #a0a0a0;
+
+    max-width: 25rem;
+    height: 45rem;
+
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        margin-bottom: 2rem;
+    }
+    .card{    
+        display: flex
+;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 3.5rem;
+    height: 3.5rem;
+    width: 20rem;
+    flex-direction: row;
+
+    padding: 10px;
+    margin: 10px 0;
+
+ 
+    }
+}
+
+.dpf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

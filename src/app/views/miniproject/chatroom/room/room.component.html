@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Room</h1>
+  <div class="card" *ngFor="let room of room; let i = index">
+    <p>Room {{ i + 1 }}</p>
+    <p>{{ room.room_name }}</p>
+    <button
+      (click)="btn_join(room.room_id)"
+      style="color: white"
+      class="btn dpf"
+      cButton
+      color="success"
+    >
+      Join
+      <svg [cIcon]="icons.cilRoom" size="lg" title="List Icon"></svg>
+    </button>
+  </div>
+</div>

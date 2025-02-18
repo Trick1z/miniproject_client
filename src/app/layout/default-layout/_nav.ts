@@ -36,6 +36,11 @@ export const navItems: INavData[] = [
     url: '/miniproject/exchange',
     iconComponent: { name: 'cil-drop' }
   },
+  {
+    name: 'Chat Rooms',
+    url: 'miniproject/room/room-list',
+    iconComponent: { name: 'cil-drop' }
+  },
   // {
   //   name: 'Typography',
   //   url: '/theme/typography',

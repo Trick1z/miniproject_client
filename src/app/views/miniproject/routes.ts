@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+// import routes from '../../views/miniproject/chatroom/routes';
 
 export const routes: Routes = [
   {
@@ -47,6 +48,10 @@ export const routes: Routes = [
           title: 'exchange'
         }
       },
+      {
+          path: 'room',
+          loadChildren: () => import('../../views/miniproject/chatroom/routes').then((m) => m.routes)
+        },
       
     ]
   }

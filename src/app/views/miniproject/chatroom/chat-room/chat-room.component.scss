@@ -1,0 +1,86 @@
+.container {
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  border: 2px solid black;
+  box-shadow: 6px 7px 12px #a0a0a0;
+
+  max-width: 25rem;
+  height: 45rem;
+
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    margin-bottom: 2rem;
+  }
+  .card {
+    overflow-y: auto;
+    // flex-direction: column-reverse; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    max-height: 30rem;
+    height: 30rem;
+    width: 20rem;
+    flex-direction: column;
+
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .form {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: start;
+    .user {
+      max-width: 7rem;
+      margin: 0 10px 0 0;
+    }
+    .msg {
+      max-width: 13rem;
+    }
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  .btn-s {
+    margin-top: 5px;
+    max-width: 16rem;
+    width: 16rem;
+    color: white;
+    margin-right: 10px;
+  }
+  .btn-b {
+    margin-top: 5px;
+    max-width: 4rem;
+    width: 100%;
+    color: white;
+  }
+}
+
+.dpf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.msg {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  .p1 {
+    font-size: 10px;
+  }
+  .p2 {
+    font-size: 6px;
+  }
+}
