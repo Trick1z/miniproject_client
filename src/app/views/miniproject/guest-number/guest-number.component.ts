@@ -31,14 +31,15 @@ export class GuestNumberComponent implements OnInit {
   game_start() {
     this.ai = this.getRandomInt(this.min_number + 1, this.max_number - 1);
 
+
     if (this.player == this.number) {
       this.winner_text = 'Player Win!';
-      return this.winner = true;
+      return (this.winner = true);
     } else if (this.ai == this.number) {
       this.winner_text = 'ai Win!';
-      return this.winner = true;
+      return (this.winner = true);
     } else {
-      this.player = 0
+      this.player = 0;
       this.set_min_max();
       return;
     }
@@ -47,17 +48,53 @@ export class GuestNumberComponent implements OnInit {
   set_min_max() {
     if (!this.winner) {
       if (this.player > this.min_number && this.player <= this.number) {
-        this.min_number = this.player;
+        if (this.ai > this.player && this.ai <= this.number) {
+          this.min_number = this.ai;
+          return
+        } else {
+          this.min_number = this.player;
+          return
+
+        }
       } else if (this.player < this.max_number && this.player >= this.number) {
-        this.max_number = this.player;
+        // this.max_number = this.player;
+
+        if (this.ai < this.player && this.player >= this.number) {
+          this.max_number = this.ai;
+          return
+
+        } else {
+          this.max_number = this.player;
+          return
+
+        }
+
       }
 
+      // this.ai = this.getRandomInt(this.min_number + 1, this.max_number - 1);
+
       if (this.ai > this.min_number && this.ai <= this.number) {
-        this.min_number = this.ai;
+        if (this.player > this.ai && this.player <= this.number) {
+          this.min_number = this.player;
+
+        } else {
+          this.min_number = this.ai;
+
+
+        }
       } else if (this.ai < this.max_number && this.ai >= this.number) {
-        this.max_number = this.ai;
+        // this.max_number = this.ai;
+
+        if (this.player < this.ai && this.player >= this.number) {
+          this.max_number = this.player;
+
+        } else {
+          this.max_number = this.ai;
+
+        }
       }
     }
+
   }
   run_btn = true;
   run_game() {
@@ -65,7 +102,7 @@ export class GuestNumberComponent implements OnInit {
     this.run_btn = false;
   }
 
-  reset(){
-    return window.location.reload()
+  reset() {
+    return window.location.reload();
   }
 }
