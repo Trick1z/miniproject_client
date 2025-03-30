@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ButtonDirective, TableModule } from '@coreui/angular';
+import { BaseApi } from '../../services/BaseAPi';
 @Component({
   selector: 'app-task-history',
   imports: [NgIf, NgFor, CommonModule, ButtonDirective, TableModule, HttpClientModule],
@@ -21,17 +22,18 @@ export class TaskHistoryComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private nav: Router
+    private nav: Router,
+    private base : BaseApi
   ) { }
 
   tableState: Boolean = true;
 
   get_history() {
 
-    this.http.get('http://127.0.0.1:8000/get.task/success').subscribe((res: any) => {
+    this.http.get(`${this.base.Api()}get.succ_todolist`).subscribe((res: any) => {
 
       this.history_data = res.data
-      console.log(res);
+
 
       if (!res) {
         return this.tableState = false;
@@ -44,6 +46,19 @@ export class TaskHistoryComponent implements OnInit {
 
     })
   }
+
+  formatDatetime(datetimeStr: string): string {
+    const date = new Date(datetimeStr);
+
+    const year = date.getFullYear();
+    const month = date.toLocaleString('default', { month: 'short' }); // Get month abbreviation
+    const day = String(date.getDate()).padStart(2, '0'); // Add leading zero if day is single digit
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+
+    // Return formatted string
+    return `${day} ${month} ${year} , ${hours}:${minutes}`;
+}
 
   nav_to() {
     this.nav.navigateByUrl('miniproject/to-do-list')

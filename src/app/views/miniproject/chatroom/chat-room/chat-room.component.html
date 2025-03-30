@@ -2,7 +2,7 @@
   <h1>Room {{ room_id }}</h1>
   <div class="card">
     <div *ngFor="let msg of chat; let i = index" class="msg">
-      <p class="p1">{{ msg.username }} : {{ msg.chat_msg }}</p>
+      <p class="p1">{{ msg.msg_username }} : {{ msg.msg_msg }}</p>
 
       <p class="p2">{{ convertTime(msg.create_date) }}</p>
     </div>

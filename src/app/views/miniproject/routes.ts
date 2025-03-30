@@ -5,54 +5,79 @@ export const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Icons'
+      title: 'Icons',
     },
     children: [
       {
         path: '',
         redirectTo: 'to-do-list',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
       {
         path: 'to-do-list',
-        loadComponent: () => import('./to-do-list/to-do-list.component').then(m => m.ToDoListComponent),
+        loadComponent: () =>
+          import('./to-do-list/to-do-list.component').then(
+            (m) => m.ToDoListComponent
+          ),
         data: {
-          title: 'to-do-list'
-        }
+          title: 'to-do-list',
+        },
       },
       {
         path: 'task-history',
-        loadComponent: () => import('./task-history/task-history.component').then(m => m.TaskHistoryComponent),
+        loadComponent: () =>
+          import('./task-history/task-history.component').then(
+            (m) => m.TaskHistoryComponent
+          ),
         data: {
-          title: 'task-history'
-        }
+          title: 'task-history',
+        },
       },
       {
         path: 'calculator',
-        loadComponent: () => import('./calculator/calculator.component').then(m => m.CalculatorComponent),
+        loadComponent: () =>
+          import('./calculator/calculator.component').then(
+            (m) => m.CalculatorComponent
+          ),
         data: {
-          title: 'calculator'
-        }
+          title: 'calculator',
+        },
       },
       {
         path: 'weather',
-        loadComponent: () => import('./weather/weather.component').then(m => m.WeatherComponent),
+        loadComponent: () =>
+          import('./weather/weather.component').then((m) => m.WeatherComponent),
         data: {
-          title: 'weather'
-        }
+          title: 'weather',
+        },
       },
       {
         path: 'exchange',
-        loadComponent: () => import('./exchange/exchange.component').then(m => m.ExchangeComponent),
+        loadComponent: () =>
+          import('./exchange/exchange.component').then(
+            (m) => m.ExchangeComponent
+          ),
         data: {
-          title: 'exchange'
-        }
+          title: 'exchange',
+        },
       },
       {
-          path: 'room',
-          loadChildren: () => import('../../views/miniproject/chatroom/routes').then((m) => m.routes)
+        path: 'room',
+        loadChildren: () =>
+          import('../../views/miniproject/chatroom/routes').then(
+            (m) => m.routes
+          ),
+      },
+      {
+        path: 'guest-number',
+        loadComponent: () =>
+          import('./guest-number/guest-number.component').then(
+            (m) => m.GuestNumberComponent
+          ),
+        data: {
+          title: 'guest number',
         },
-      
-    ]
-  }
+      },
+    ],
+  },
 ];

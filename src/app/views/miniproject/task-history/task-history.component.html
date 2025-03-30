@@ -10,16 +10,18 @@
           <th scope="col">Status</th>
           <th scope="col">Name</th>
           <th scope="col">Descriptions</th>
+          <th scope="col">Success Date</th>
         </tr>
         </thead>
         <tbody>
-        
+
         <tr cTableColor="success" *ngFor="let item of history_data;let i = index">
           <th scope="row">Success</th>
-          <td>{{item.list_name}}</td>
-          <td>{{item.list_desc}}</td>
+          <td>{{item.task_name}}</td>
+          <td>{{item.task_desc}}</td>
+          <td>{{formatDatetime(item.succ_date)}}</td>
         </tr>
-        
+
       </table>
 </div>
 <div *ngIf="tableState === false" style="margin-top: 50px;" class="container dpf">

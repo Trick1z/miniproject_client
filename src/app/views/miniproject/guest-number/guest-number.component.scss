@@ -1,0 +1,42 @@
+.game-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container {
+    flex-direction: column;
+
+    .random-number {
+    }
+
+    .chat-box {
+      padding-top: 10px;
+      display: flex
+  ;
+      justify-content: flex-start;
+      border-radius: 15px;
+      background-color: #e9e9e9;
+      height: 20rem;
+      margin-bottom: 20px;
+      box-shadow: inset 6px 5px 8px #757575;
+      flex-direction: column;
+      align-items: center;
+    }
+    .inp {
+      flex-direction: row;
+
+      .inp-form {
+        max-width: 10rem;
+        margin-bottom: -16px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.dpf {
+  display: flex;
+  justify-content: center;
+}
+.center {
+  align-items: center;
+}

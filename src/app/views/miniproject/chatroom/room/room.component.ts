@@ -1,3 +1,4 @@
+import { BaseApi } from './../../../services/BaseAPi';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { ButtonDirective, ButtonModule } from '@coreui/angular';
@@ -28,15 +29,16 @@ export class RoomComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private route :Router
+    private route :Router,
+    private base : BaseApi
   ) { }
   room: Array<any> = []
   get_room() {
     this.http.get(`${this.Base_Url}/get.chatroom`).subscribe((Res: any) => {
-      console.log(Res);
+      // console.log(Res);
       this.room = Res.data
 
-      console.log(this.room);
+      // console.log(this.room);
 
 
     })

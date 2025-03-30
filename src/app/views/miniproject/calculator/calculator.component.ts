@@ -54,7 +54,9 @@ export class CalculatorComponent {
         break
       case '/':
         res = parseFloat(this.result1) / parseFloat(this.result2)
+        // this.result1 = res.toLocaleString()
         this.result1 = res.toLocaleString()
+
         this.clear2()
         break
     }

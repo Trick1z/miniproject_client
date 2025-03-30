@@ -3,7 +3,7 @@
     <div class="xs-3">
       <label cLabel for="exampleFormControlInput1">Name</label>
       <input
-       
+
       required
         [(ngModel)]="formData.name"
         [ngModelOptions]="{ standalone: true }"
@@ -66,14 +66,14 @@
 <div class="container dpf">
   <div *ngFor="let item of Task" class="info-card m-t">
     <div class="info">
-      <h5>name :{{ item.list_name }}</h5>
-      <h5>desc :{{ item.list_desc }}</h5>
+      <h5>name :{{ item.task_name }}</h5>
+      <h5>desc :{{ item.task_desc }}</h5>
     </div>
     <div class="btn-group">
       <button
         style="margin-left: 5px"
         class="btns m-l"
-        (click)="success_btn(item.list_id)"
+        (click)="success_btn(item.task_id)"
         cButton
         color="info"
       >
@@ -91,7 +91,7 @@
       <button
         style="margin-left: 5px"
         class="btns m-l"
-        (click)="delete_btn(item.list_id)"
+        (click)="delete_btn(item.task_id)"
         cButton
         color="danger"
       >

@@ -10,7 +10,7 @@ export const navItems: INavData[] = [
       text: 'NEW'
     }
   },
-  
+
   {
     title: true,
     name: 'Theme'
@@ -30,7 +30,7 @@ export const navItems: INavData[] = [
     url: '/miniproject/weather',
     iconComponent: { name: 'cil-drop' }
   },
-  
+
   {
     name: 'exchange',
     url: '/miniproject/exchange',
@@ -39,6 +39,11 @@ export const navItems: INavData[] = [
   {
     name: 'Chat Rooms',
     url: 'miniproject/room/room-list',
+    iconComponent: { name: 'cil-drop' }
+  },
+  {
+    name: 'Guest Number ',
+    url: 'miniproject/guest-number',
     iconComponent: { name: 'cil-drop' }
   },
   // {
